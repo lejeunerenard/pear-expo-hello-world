@@ -8,6 +8,7 @@ Requirements
 Make sure you have installed on your system:
 
 - `CMake` >= 3.25.
+- The bare runtime: `npm i -g bare-runtime`
 - For Android, installing Android Studio is recommended (you can follow [React Native docs](https://reactnative.dev/docs/0.72/environment-setup?platform=android)), also make sure Android NDK version `25.1.8937393` is installed and set the `ANDROID_HOME` environment variable (see `Configure the ANDROID_HOME environment variable` section on React Native docs).
 
 Building
@@ -36,25 +37,31 @@ By default the helpers builds bare for every architecture for both iOS and Andro
 
 ```sh
 # iOS simulator only
-hello-pear --ios-sim
+hello-pear -c --ios-sim
 
 # iOS simulator only with x64 architecture
-hello-pear --ios-sim x64
+hello-pear -c --ios-sim x64
 
 # iOS and iOS simulator
-hello-pear --ios --ios-sim arm64
+hello-pear -c --ios --ios-sim arm64
 
 # Android only arm archs
-hello-pear --android arm64 arm
+hello-pear -c --android arm64 arm
 
 # Android only arm64
-hello-pear --android arm64
+hello-pear -c --android arm64
 
 # Android only x86 archs
-hello-pear --android x64 ia32
+hello-pear -c --android x64 ia32
 
 # help
 hello-pear --help
+```
+
+So e.g. if you want to build for the ios-simulator on Silicon Mac you'd run:
+
+```sh
+npx hello-pear --configure --ios-sim arm64
 ```
 
 Running
@@ -71,11 +78,11 @@ npx expo run:ios
 # clearing the build cache
 npx expo run:ios --no-build-cache
 
-# build and run on Android connected devices
+# or build and run on Android connected devices
 npx expo run:android
 # clearing the build cache
 npx expo run:android --no-build-cache
 
-# just start the local server
+# and then just start the local server
 npx expo start --dev-client
 ```
