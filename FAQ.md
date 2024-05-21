@@ -14,7 +14,8 @@ here:
 https://github.com/sodium-friends/sodium-native/blob/3cb0cf85b021411a9bee02ebec607c4ba5a4fefd/CMakeLists.txt#L353
 
 > That will enable all the processor extensions supported by your CPU. If SSE4.1
-is among those then the code should compile.
+> is among those then the code should compile.
+
 – Kasper in bare dev (new) room
 
 Subsequent error in react native compile:
